@@ -57,10 +57,17 @@ public class ProdutoController {
         return new ResponseEntity<>(produtoAtualizado, HttpStatus.OK);
     }
 
-    @PatchMapping("/{id}")
-    public ResponseEntity<ProdutoDto> atualizarEstoque(@PathVariable String id, @RequestBody @Valid int quantidadeVendida){
-        ProdutoDto produtoVendido = servicoProduto.atualizarEstoque(id, quantidadeVendida);
-        return new ResponseEntity<>(produtoVendido, HttpStatus.OK);
-    }
+    //@PatchMapping("/{id}")
+    //public ResponseEntity<ProdutoDto> atualizarEstoque(@PathVariable String id, @RequestBody @Valid int quantidadeVendida){
+       // ProdutoDto produtoVendido = servicoProduto.atualizarEstoque(id, quantidadeVendida);
+       // return new ResponseEntity<>(produtoVendido, HttpStatus.OK);
+   // }
+   @PatchMapping("/{id}/{quantidade}")
+   public ResponseEntity<ProdutoDto> atualizarEstoque(@PathVariable String id, @PathVariable String quantidade){
+      
+       int quantidadeEstoque = Integer.parseInt(quantidade);
 
+       ProdutoDto produtoVendido = servicoProduto.atualizarEstoque(id,  quantidadeEstoque);
+       return new ResponseEntity<>(produtoVendido, HttpStatus.OK);
+   } 
 }
