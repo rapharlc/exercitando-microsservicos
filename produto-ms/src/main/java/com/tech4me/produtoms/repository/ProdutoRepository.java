@@ -1,6 +1,5 @@
 package com.tech4me.produtoms.repository;
 
-import java.util.List;
 
 import com.tech4me.produtoms.model.Produto;
 

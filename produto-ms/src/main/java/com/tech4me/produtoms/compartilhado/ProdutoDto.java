@@ -1,11 +1,18 @@
 package com.tech4me.produtoms.compartilhado;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
+
 public class ProdutoDto {
     
     private String id;
     private String codigoDoProduto;
+    @NotBlank(message = "O nome do produto deve conter caracteres não brancos")
+    @NotEmpty(message = "O nome do produto não pode ser nulo")
     private String nomeDoProduto;
     private double valorDoProduto;
+    @Positive(message = "O número em estoque deve ser maior que zero")
     private int quantidadeEmEstoque;
 
     

@@ -10,6 +10,10 @@
 		{
 			"name": "zuul-server",
 			"path": "zuul-server"
+		},
+		{
+			"name": "venda-ms",
+			"path": "venda-ms"
 		}
 	],
 	"settings": {
